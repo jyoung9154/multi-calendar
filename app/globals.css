@@ -1,0 +1,40 @@
+:root {
+  --background-base: #f4f6f8;
+  --surface: #ffffff;
+  --text-primary: #1c1c1e;
+  --text-secondary: #8e8e93;
+
+  /* 프리미엄 오렌지 테마 */
+  --primary: #ff7a45;
+  --primary-hover: #fa541c;
+  --primary-light: #fff2e8;
+  --primary-soft: rgba(255, 122, 69, 0.08);
+
+  /* 상태별 색상 */
+  --success: #52c41a; /* 초록색: 미래의 일정 */
+  --error: #ff4d4f;   /* 빨간색: 과거의 일정이나 주의점 */
+  
+  --radius-md: 12px;
+  --radius-full: 9999px;
+}
+
+html, body {
+  background-color: var(--background-base);
+  color: var(--text-primary);
+  margin: 0; padding: 0;
+  font-family: Pretendard, sans-serif; /* 시스템 기본 폰트 권장 */
+  font-size: 12px;
+}
+
+/* 모바일 화면을 겨냥한 앱 컨테이너 폭 고정 */
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--background-base);
+  display: flex;
+  flex-direction: column;
+}
+.page-content {
+  padding: 0 20px 40px;
+}

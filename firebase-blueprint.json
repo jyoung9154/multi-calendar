@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "Schedule": {
+      "title": "Schedule",
+      "description": "A single booking or block schedule",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "groupId": { "type": "string" },
+        "type": { "type": "string", "enum": ["in", "out", "clean", "stay"] },
+        "guestName": { "type": "string" },
+        "platform": { "type": "string" },
+        "isBlock": { "type": "boolean" },
+        "date": { "type": "string", "format": "date-time" },
+        "time": { "type": "string" }
+      },
+      "required": ["id", "groupId", "type", "guestName", "platform", "date", "time"]
+    },
+    "Checklist": {
+      "title": "Checklist",
+      "description": "Checklist status for a specific booking group",
+      "type": "object",
+      "properties": {
+        "vehicle": { "type": "boolean" },
+        "password": { "type": "boolean" }
+      }
+    }
+  },
+  "firestore": {
+    "/schedules/{scheduleId}": {
+      "schema": "Schedule",
+      "description": "Collection of all manual schedules"
+    },
+    "/checklists/{groupId}": {
+      "schema": "Checklist",
+      "description": "Checklist status for each booking"
+    }
+  }
+}

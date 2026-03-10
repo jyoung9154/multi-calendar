@@ -1,0 +1,126 @@
+.calendarContainer {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.header button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--text-secondary);
+}
+
+.dayName {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding-bottom: 8px;
+}
+
+/* 그리드 기본 구성 */
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cell {
+  position: relative;
+  min-height: 90px;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: flex-start;
+  padding-top: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.disabled {
+  opacity: 0.3;
+}
+
+.pastDay .rangeBgLeft, .pastDay .rangeBgRight, .pastDay .rangeBgFull {
+  opacity: 0.3;
+}
+
+/* 연속된 일정 Range 배경 바 (얇은 선) */
+.rangeBgLeft {
+  position: absolute; left: -2px; right: 50%; height: 6px;
+  border-radius: 0;
+  opacity: 0.9; z-index: 0;
+  pointer-events: none;
+}
+.rangeBgRight {
+  position: absolute; left: 50%; right: -2px; height: 6px;
+  border-radius: 0;
+  opacity: 0.9; z-index: 0;
+  pointer-events: none;
+}
+.rangeBgFull {
+  position: absolute; left: -2px; right: -2px; height: 6px;
+  border-radius: 0;
+  opacity: 0.9; z-index: 0;
+  pointer-events: none;
+}
+
+.barLabelContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.barLabel {
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 800;
+  white-space: nowrap;
+  padding: 1px 4px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 4px;
+  line-height: 1;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.dateNumber {
+  z-index: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 1;
+  width: 100%;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.badgeIn { background-color: #22c55e !important; }
+.badgeOut { background-color: #f87171 !important; }
+.badgeBlock { background-color: #94a3b8 !important; }

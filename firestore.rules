@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return true; // For this app, we are using a simple password check in the UI, but Firestore rules are open for now as requested for "me and parents only" without full Auth
+    }
+
+    match /schedules/{scheduleId} {
+      allow read, write: if true;
+    }
+
+    match /checklists/{groupId} {
+      allow read, write: if true;
+    }
+  }
+}
