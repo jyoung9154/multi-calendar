@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Calendar from "@/components/Calendar";
 import ScheduleList, { Schedule } from "@/components/ScheduleList";
 import ScheduleForm from "@/components/ScheduleForm";
-import { startOfWeek, endOfWeek, format } from "date-fns";
+import { startOfWeek, endOfWeek, format, isSameDay } from "date-fns";
 import { ko } from "date-fns/locale";
 import './globals.css';
 import { db } from "@/lib/firebase";
